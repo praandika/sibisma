@@ -21,5 +21,13 @@ class UsersTableSeeder extends Seeder
             'hak_akses' => 'super admin',
             'created_at' => \Carbon\Carbon::now(),
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Admin',
+            'username' => 'admin',
+            'password' => hash::make('admin'),
+            'hak_akses' => 'super admin',
+            'created_at' => \Carbon\Carbon::now(),
+        ]);
     }
 }
